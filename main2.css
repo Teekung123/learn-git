@@ -1,159 +1,44 @@
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    font-family: sans-serif;
+html, body {
+font-family: "Andika New Basic", cursive;
+color: #f5f5f5;
+overflow: hidden;
+height: 100%;
+width: 100%;
+padding: 0;
+margin: 0;
+user-select: none;
+background-color: #0c1445;
 }
 
-section {
-    position: absolute;
-    width: 600px;
-    height: 300px;
-    display: flex;
-}
- 
-section div {
-    position: relative;
-    width: 50%;
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+canvas {
+transition: background 2s;
+width: 100vw;
+height: 100vh;
+cursor: pointer;
 }
 
-section div h2 {
-    position: absolute;
-    color: #5c0140;
-    font-size: 200px;
-    font-weight: 900;
+.title {
+position: absolute;
+top: 30%;
+left: 50%;
+transform: translate(-50%, -30%);
+font-size: 3em;
+padding: 0;
+margin: 0;
 }
 
-section div:nth-child(1) h2 {
-    right: -300px;
-    transform: translateY(-20px);
-    animation: animate 2s ease-in-out forwards;
-    animation-delay: 4s;
-}
-@keyframes animate {
-    0% {
-        right: -280px;
-    }
-    100% {
-        right: 0;
-    }
-}
-section div:nth-child(2) h2 {
-    left: -300px;
-    transform: translateY(20px);
-    animation: animatel 2s ease-in-out forwards;
-    animation-delay: 4s;
-}
-@keyframes animatel {
-    0% {
-        left: -280px;
-    }
-    100% {
-        left: 0;
-    }
+.show {
+display: block;
+text-align: center;
+padding: 10px;
+position: absolute;
+top: 50%;  /* ตั้งให้อยู่กลางแนวตั้ง */
+left: 50%;  /* ตั้งให้อยู่กลางแนวนอน */
+transform: translate(-50%, -50%);  /* ทำให้ตำแหน่งกลางจริง */
+z-index: 10;  /* เพิ่ม z-index ให้ข้อความอยู่บน `canvas` */
 }
 
-section:nth-child(2) div span {
-    position: absolute;
-    width: 300px;
-    height: 45px;
-    background: linear-gradient(to left, #360040, #f40489);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+#canvas {
+z-index: -1;  /* ตั้งค่า `canvas` ให้อยู่เบื้องหลังข้อความ */
 }
-section:nth-child(2) div:nth-child(1) span {
-    right: -300px;
-    animation: animate2 2s linear forwards;
-}
-
-@keyframes animate2 {
-    0% {
-        right: -300px;
-    }
-    49% {
-        right: 0;
-    }
-    51% {
-        right: 0;
-        transform: translateY(0);
-    }
-    100% {
-        right: 0;
-        transform: translateY(85px);
-    }
-} 
-    
-section:nth-child(2) div:nth-child(2) span {
-    left: -300px;
-    background: linear-gradient(to left, #f40489, #360040);
-    animation: animate3 2s linear forwards;
-}
-@keyframes animate3 {
-    0% {
-        left: -300px;
-    }
-    49% {
-        left: 0;
-    }
-    51% {
-        left: 0;
-        transform: translateY(0);
-    }
-    100% {
-        left: 0;
-        transform: translateY(-70px);
-    }
-} 
-    
-
-section:nth-child(2) div span h3 {
-    position: absolute;
-    color: white;
-    font-size: 35px;
-    font-weight: 750;
-    font-style: italic;
-}
-
-section:nth-child(2) div span h4 {
-    position: absolute;
-    width: 45px;
-    height: 45px;
-    background: white;
-    transform: rotate(45deg);
-}
-
-section:nth-child(2) div:nth-child(1) span h4 {
-    left: -25px;
-}
-
-section:nth-child(2) div:nth-child(2) span h4 {
-    right: -25px;
-}
-
-.fogos{
-    width: 100%;
-    height: 100%;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-}
-.fogos>div {
-    border: 2px solid #fff;
-    position: absolute;
-    opacity: 0;
-    
-}
+  
